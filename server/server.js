@@ -12,7 +12,10 @@ const port = process.env.PORT || 5000;
 
 app.use(express.json()); // Middleware to parse JSON request bodies
 app.use(cors({
-  origin: process.env.CLIENT_URLS.split(','),
+  origin: [
+    'https://todo-aj8e.onrender.com',
+    'http://localhost:5173' // Keep this for local development
+  ],
   credentials: true
 })); // Enable CORS for the React frontend
 
